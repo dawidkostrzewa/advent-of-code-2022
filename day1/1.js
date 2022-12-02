@@ -1,3 +1,5 @@
+// TASK: https://adventofcode.com/2022/day/1
+
 const fs = require('fs');
 
 fs.readFile('input-1.txt', 'utf8', (err, data) => {
@@ -6,27 +8,18 @@ fs.readFile('input-1.txt', 'utf8', (err, data) => {
     return;
   }
   const splitted = data.split("\n")
-  console.log(splitted);
-
-  const arr = [];
-  splitted.map(i => {
-
-  })
-
-  console.log(splitted.join("+").split("++"))
-
   const x = splitted.join("+").split("++");
-  const abc = x.map(row => {
+  const allCalories = x.map(row => {
     return row.split("+");
   })
 
-  console.log(abc)
+  console.log(allCalories)
 
   let max = 0;
 
   const summed = []
 
-  abc.forEach(calories => {
+  allCalories.forEach(calories => {
     let sum = 0;
     calories.forEach(calorie => {
       sum += parseInt(calorie);

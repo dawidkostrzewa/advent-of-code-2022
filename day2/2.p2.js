@@ -1,3 +1,5 @@
+// TASK: https://adventofcode.com/2022/day/2
+
 const fs = require('fs');
 
 const getInput = (tool) => {
