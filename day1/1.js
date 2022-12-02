@@ -7,31 +7,14 @@ fs.readFile('input-1.txt', 'utf8', (err, data) => {
     console.error(err);
     return;
   }
-  const splitted = data.split("\n")
-  const x = splitted.join("+").split("++");
-  const allCalories = x.map(row => {
-    return row.split("+");
-  })
+  const allCalories = data.split("\n")
+  .join("+")
+  .split("++")
+  .map(row => row.split("+"))
+  .map(row => row.map(c => parseInt(c)));
 
-  console.log(allCalories)
+const summed = allCalories.map(row => row.reduce((a, b) => a + b, 0));
 
-  let max = 0;
-
-  const summed = []
-
-  allCalories.forEach(calories => {
-    let sum = 0;
-    calories.forEach(calorie => {
-      sum += parseInt(calorie);
-    })
-    if (sum > max) {
-      max = sum;
-    }
-
-    summed.push(sum)
-  })
-
-  summed.sort((a, b) => b - a);
-  console.log(summed)
-  console.log(summed[0] + summed[1] + summed[2])
+summed.sort((a, b) => b - a);
+console.log(summed[0] + summed[1] + summed[2]);
 });
