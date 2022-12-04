@@ -1,4 +1,4 @@
-// TASK: https://adventofcode.com/2022/day/1
+// TASK: https://adventofcode.com/2022/day/3
 
 const fs = require('fs');
 
