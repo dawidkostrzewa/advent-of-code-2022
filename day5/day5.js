@@ -95,6 +95,12 @@ fs.readFile('input-5.txt', 'utf8', (err, data) => {
             }
         }
 
+        // PART 1 - inverted
+        // for (let i = 0; i < crates.length; i++) {
+        //     cratesGrid[indexNotFilled + i - crates.length][column] = crates[crates.length - i - 1]
+        // }
+
+        // PART 2 - correct form
         for (let i = 0; i < crates.length; i++) {
             cratesGrid[indexNotFilled + i - crates.length][column] = crates[i]
         }
